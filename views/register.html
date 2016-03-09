@@ -1,0 +1,27 @@
+<div class="card" name="registerForm">
+  <div class="card-header">
+      <h4>Register</h4>
+  </div>
+  <div class="card-block">
+      <h4 class="card-title">Account Information</h4>
+      <p class="card-text">Please fill all the information below, all fields are required *</p>
+      <div class="form-group">
+          <input type="text" class="form-control" placeholder="Account owner name" ng-model="name">
+      </div>
+      <div class="form-group">
+          <label for="">Currency</label>
+          <select name="" class="form-control" id="" ng-model="currency">
+              <option>&#36; Dolar (USD)</option>
+              <option>&#162; Colón (CRC)</option>
+          </select>
+      </div>
+      <div class="form-group">
+          <label for="">Account type</label>
+          <select name="" class="form-control" id="" ng-model="account">
+              <option>Simple</option>
+              <option>Savings</option>
+          </select>
+      </div>
+      <a href="#" class="btn btn-register" ng-click="addNewUser()">Register</a>
+  </div>
+</div>
