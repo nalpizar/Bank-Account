@@ -91,6 +91,10 @@ header div img {
   color: #6bc5df;
 }
 
+.detail-movement {
+  width: 50%;
+}
+
 @media (max-width: 400px) {
   header div {
     width: 68%;
@@ -105,6 +109,10 @@ header div img {
 
   header div img {
     display: none;
+  }
+
+  .detail-movement {
+    width: 93%;
   }
 
   .card {

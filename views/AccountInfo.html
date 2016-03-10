@@ -3,8 +3,8 @@
         <h4>My Account</h4>
     </div>
     <div class="card-block">
-        <h4 class="card-title">Welcome John Doe</h4>
-        <p class="card-text">Below you will find the last 10 transactions for you account ACCOUNT TYPE</p>
+        <h4 class="card-title" ng-show="userKey.length">Welcome {{ userKey[0].name }}</h4>
+        <p class="card-text" ng-show="userKey.length">Below you will find the last 10 transactions for your account {{ userKey[0].account }}</p>
         <table class="table table-condensed">
             <thead>
               <tr>
@@ -15,23 +15,11 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>3/2/2016</td>
-                <td>Buy Tickets</td>
-                <td>&#36;129</td>
-                <td class="detail-actions"><a href="">See actions</a></a></td>
-              </tr>
-              <tr>
-                <td>3/2/2016</td>
-                <td>Buy Tickets</td>
-                <td>&#36;129</td>
-                <td class="detail-actions"><a href="">See actions</a></a></td>
-              </tr>
-              <tr>
-                <td>3/2/2016</td>
-                <td>Buy Tickets</td>
-                <td>&#36;129</td>
-                <td class="detail-actions"><a href="">See actions</a></a></td>
+              <tr ng-repeat="item in movKey | limitTo:-10 | orderBy:'dateMov'">
+                <td>{{ item.dateMov | date : format : timezone }}</td>
+                <td>{{ item.detailMov }}</td>
+                <td>{{ item.amountMov }}</td>
+                <td class="detail-actions"><a href="#/description/{{ item.id }}">See</a></a></td>
               </tr>
             </tbody>
         </table>

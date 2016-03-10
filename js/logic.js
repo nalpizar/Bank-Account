@@ -14,16 +14,15 @@ angular.module('bankAccount',[
         })
         .when('/myaccount', {
             templateUrl: 'views/AccountInfo.html',
+            controller : 'AccountCtrl'
         })
         .when('/add', {
             templateUrl: 'views/AddMovement.html',
             controller : 'AccountCtrl'
         })
-        .when('/edit', {
-            // templateUrl: 'views/register.html',
-        })
-        .when('/detail', {
+        .when('/description/:id', {
             templateUrl: 'views/DetailMovement.html',
+            controller: 'DetailMovCtrl'
         })
         .otherwise({redirectTo: '/'});
 }]);

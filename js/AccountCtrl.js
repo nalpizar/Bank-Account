@@ -9,14 +9,12 @@ angular.module ('bankAccount.controllers')
 
             $scope.userKey = PersistenceService.verify(localStorageKey) || [];
             $scope.movKey = PersistenceService.verify(keyForMov) || [];
-            $scope.lastID = PersistenceService.verify("userID") || 0;
+            $scope.movID = PersistenceService.verify("transactionID") || 0;
             $scope.notFound = false;
 
             $scope.addNewUser = function () {
-              $scope.lastID++;
-
               var newUser = {
-                  id : $scope.lastID,
+                  // id : $scope.id,
                   name : $scope.name,
                   currency : $scope.currency,
                   account : $scope.account
@@ -28,13 +26,15 @@ angular.module ('bankAccount.controllers')
                 $scope.registerForm.$setPristine();
                 $scope.registerForm.$setUntouched();
                 $scope.name = "";
-                $scope.description = "";
-                $scope.dueDate = "";
+                $scope.currency = "";
+                $scope.account = "";
               }
             }
 
             $scope.addNewMov = function () {
+              $scope.movID++;
               var newMov = {
+                id : $scope.movID,
                 dateMov : $scope.dateMov,
                 amountMov : $scope.amountMov,
                 detailMov : $scope.detailMov,
@@ -61,8 +61,8 @@ angular.module ('bankAccount.controllers')
             $scope.$watch('movKey', function(newValue, oldValue) {
                 PersistenceService.save(keyForMov, newValue);
             }, true);
-            $scope.$watch('lastID', function(newValue, oldValue) {
-                PersistenceService.save("userID", newValue);
+            $scope.$watch('movID', function(newValue, oldValue) {
+                PersistenceService.save("transactionID", newValue);
             }, true);
         }
     ])
