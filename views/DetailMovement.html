@@ -27,9 +27,3 @@
     </table>
   </div>
 </div>
-
-
-
-<li id="todoList__Task-{{ item.id }}" class="todoList__Task" ng-repeat="item in filtered = (tasksCol | orderBy:null:true | filter:taskFilter)" data-status="{{ item.done }}">
-    <h2><a href="#/description/{{ item.id }}" class="todoList__Task--name"><span class="fi-pencil"></span> {{ item.name }}</a></h2>
-</li>
