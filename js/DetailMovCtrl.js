@@ -16,7 +16,7 @@ angular.module ('bankAccount.controllers')
         $scope.$watch('movKey', function(newValue, oldValue) {
             PersistenceService.save(localStorageKey, newValue);
         }, true);
-        $scope.$watch('lastID', function(newValue, oldValue) {
+         $scope.$watch('lastID', function(newValue, oldValue) {
             PersistenceService.save("transactionID", newValue);
         }, true);
 

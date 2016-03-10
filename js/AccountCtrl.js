@@ -14,7 +14,6 @@ angular.module ('bankAccount.controllers')
 
             $scope.addNewUser = function () {
               var newUser = {
-                  // id : $scope.id,
                   name : $scope.name,
                   currency : $scope.currency,
                   account : $scope.account
