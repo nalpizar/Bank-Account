@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Bank Account App</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/menu.css">
+    </head>
+    <body ng-app="bankAccount">
+        <header>
+            <div class="header-width">
+                <div class="menu-container">
+                    <input class="burger-check" id="burger-check" type="checkbox"><label for="burger-check" class="burger"></label>
+                    <label class="menu-label" for="">MENU</label>
+                    <nav id="navigation1" class="navigation">
+                        <ul>
+                            <li><a href="#/">Home</a></li>
+                            <li><a href="#/register">Register</a></li>
+                            <li><a href="#/myaccount">Account Information</a></li>
+                            <li><a href="#/add">Add Movements</a>
+                        </ul>
+                    </nav>
+                </div>
+                <a href=""><img src="img/logo.png" alt="logo"></a>
+                <h1>My Bank Account</h1>
+            </div>
+        </header>
+
+        <div ng-view></div>
+
+        <div class="card back-home-buttons">
+            <a href="#" class="btn btn-previous"><span class="glyphicon glyphicon-arrow-left"></span> Previous page</a>
+            <a href="#/" class="btn btn-home"><span class="glyphicon glyphicon-home"></span> Home</a>
+        </div>
+
+        <script src="js/assets/angular.min.js"></script>
+        <script src="js/assets/angular-route.min.js"></script>
+        <script src="js/app.js"></script>
+        <!-- LocalStorage Service -->
+        <script src="js/persistence/logic.js"></script>
+        <script src="js/persistence/persistenceService.js"></script>
+        <!-- Controllers -->
+        <script src="js/controllers/controllers.js"></script>
+        <script src="js/controllers/DetailMovCtrl.js"></script>
+        <script src="js/controllers/AccountCtrl.js"></script>
+    </body>
+</html>
+
+

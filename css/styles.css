@@ -1,0 +1,122 @@
+body {
+  font-weight: 100;
+  background-color: #525252;
+  color: #525252;
+}
+
+header {
+  display: inline-block !important;
+  width: 100%;
+  background: #f77462;
+}
+
+header div {
+  width: 80%;
+  margin: 0 auto;
+}
+
+header div h1 {
+  font-weight: 100;
+   margin-top: 27px;
+}
+
+header div h1,
+header div img {
+  float: left;
+}
+
+header div img {
+  width: 5%;
+  margin: 20px 40px;
+}
+
+.card {
+  position: relative;
+  display: block;
+  margin-bottom: .75rem;
+  background-color: #fff;
+  border-radius: .5rem;
+  width: 450px;
+  margin: 70px auto;
+}
+
+.card-header:first-child {
+  border-radius: .5rem .5rem 0 0;
+}
+.card-header {
+  padding: .75rem 1.25rem;
+  background-color: #6dc5dd;
+}
+
+.card-header h4 {
+  color: #fff;
+  font-weight: 100;
+  font-size: 20px;
+  letter-spacing: 1px
+}
+
+.card-block {
+  color: #91959e;
+  border-radius: 0 0 .5rem .5rem;
+  padding: 1.25rem;
+  background-color: #f2f2f2;
+}
+
+.card-title {
+  font-weight: 200;
+}
+
+.btn-register,
+.btn-home,
+.btn-previous {
+  color: #fff;
+  background-color: #f77462;
+  border-color: #e56756;
+  font-weight: 200;
+}
+
+.btn-home {
+  float: right;
+}
+
+.btn-register:hover {
+  color: #fff;
+}
+
+.back-home-buttons {
+  background-color: #525252;
+}
+
+.detail-actions {
+  color: #6bc5df;
+}
+
+.detail-movement {
+  width: 50%;
+}
+
+@media (max-width: 400px) {
+  header div {
+    width: 68%;
+  }
+
+  header div h1 {
+    font-size: 25px;
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 40px;
+  }
+
+  header div img {
+    display: none;
+  }
+
+  .detail-movement {
+    width: 93%;
+  }
+
+  .card {
+    width: 90%;
+    margin: 28px auto;
+  }
+}

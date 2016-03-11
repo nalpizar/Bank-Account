@@ -1,0 +1,49 @@
+<div class="card detail-movement" ng-hide="edit">
+  <div class="card-header">
+      <h4>Movement Detail</h4>
+  </div>
+  <div class="card-block" >
+    <h4 class="card-title">Transaction Detail</h4>
+    <p class="card-text">Below you will find the detail of the transaction with the date {{ item.dateMov | date : format : timezone }} *</p>
+    <table class="table table-condensed">
+      <thead>
+        <tr>
+          <th>Transaction</th>
+          <th>Date</th>
+          <th>Amount</th>
+          <th>Detail</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ item.id }}</td>
+          <td>{{ item.dateMov | date : format : timezone }}</td>
+          <td>&#36; {{ item.amountMov }}</td>
+          <td> {{ item.detailMov }} </td>
+          <td class="detail-actions"><a href="#/myaccount" ng-click="deleteItem()">Remove</a> | <a ng-click="toggleEdit()">Edit</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="card detail-movement" ng-show="edit">
+  <div class="card-header">
+      <h4>Edit</h4>
+  </div>
+  <div class="card-block">
+    <div class="form-group">
+      <label>Date</label>
+      <input type="date" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Ammount</label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Detail</label>
+      <input type="text" class="form-control">
+    </div>
+    <button class="btn btn-register" ng-click="toggleEdit()">Save</button>
+  </div>
+</div>
