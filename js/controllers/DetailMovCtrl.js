@@ -32,10 +32,8 @@ angular.module ('bankAccount.controllers' )
 
         $scope.toggleEdit = function () {
           if($scope.edit == true) {
-            // save
             $scope.edit = false;
           } else {
-            // edit
             $scope.edit = true;
             console.log($scope.movKey);
           }
