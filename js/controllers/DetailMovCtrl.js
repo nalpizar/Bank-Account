@@ -1,4 +1,4 @@
-angular.module ('bankAccount.controllers')
+angular.module ('bankAccount.controllers' )
 .controller('DetailMovCtrl',[
       '$scope',
       'PersistenceService',
@@ -28,8 +28,17 @@ angular.module ('bankAccount.controllers')
             var target = PersistenceService.getItemIndex($scope.movKey, currentID);
             $scope.movKey.splice(target, 1);
           }
+        };
 
-          $location.path('/');
+        $scope.toggleEdit = function () {
+          if($scope.edit == true) {
+            // save
+            $scope.edit = false;
+          } else {
+            // edit
+            $scope.edit = true;
+            console.log($scope.movKey);
+          }
         };
 
       }

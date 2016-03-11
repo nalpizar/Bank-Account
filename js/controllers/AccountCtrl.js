@@ -11,6 +11,19 @@ angular.module ('bankAccount.controllers')
             $scope.movKey = PersistenceService.verify(keyForMov) || [];
             $scope.movID = PersistenceService.verify("transactionID") || 0;
             $scope.notFound = false;
+            $scope.totalSum = 0;
+
+            $scope.sumTotalCredit = function () {
+              angular.forEach($scope.movKey, function(value, key) {
+                  if (value.type == 'Credit') {
+                    $scope.totalSum += parseInt(value.amountMov);
+                  } else if (value.type == 'Debit') {
+                    $scope.totalSum -= value.amountMov;
+                  }
+              });
+            };
+
+            $scope.sumTotalCredit();
 
             $scope.addNewUser = function () {
               var newUser = {
@@ -35,6 +48,7 @@ angular.module ('bankAccount.controllers')
               var newMov = {
                 id : $scope.movID,
                 dateMov : $scope.dateMov,
+                type : $scope.type,
                 amountMov : $scope.amountMov,
                 detailMov : $scope.detailMov,
               }

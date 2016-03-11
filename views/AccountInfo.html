@@ -3,12 +3,14 @@
         <h4>My Account</h4>
     </div>
     <div class="card-block">
+
         <h4 class="card-title" ng-show="userKey.length">Welcome {{ userKey[0].name }}</h4>
         <p class="card-text" ng-show="userKey.length">Below you will find the last 10 transactions for your account {{ userKey[0].account }}</p>
         <table class="table table-condensed">
             <thead>
               <tr>
                 <th>Date</th>
+                <th>Type</th>
                 <th>Detail</th>
                 <th>Amount</th>
                 <th>Actions</th>
@@ -17,9 +19,13 @@
             <tbody>
               <tr ng-repeat="item in movKey | limitTo:-10 | orderBy:'dateMov'">
                 <td>{{ item.dateMov | date : format : timezone }}</td>
+                <td>{{ item.type }}</td>
                 <td>{{ item.detailMov }}</td>
                 <td>{{ item.amountMov }}</td>
                 <td class="detail-actions"><a href="#/description/{{ item.id }}">See</a></a></td>
+              </tr>
+              <tr>
+                <td>Balance: {{totalSum}}</td>
               </tr>
             </tbody>
         </table>
